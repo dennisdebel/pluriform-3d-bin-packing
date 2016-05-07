@@ -60,6 +60,12 @@ void ofApp::setup() {
     ofVec3f scale(.09, .09, .09);
     
     // 3D logo by Lauren Licherdell | http://www.laurenlicherdell.com/ //
+    model2.loadModel("OFlogo.dae", false); //change true to false (do not optimize model, see https://github.com/openframeworks/openFrameworks/issues/4994)
+    model2.setScale(scale.x, scale.y, scale.z);
+    model2.setPosition(0, 0, 0);
+
+    
+    
     assimpModel.loadModel("grip.dae", false); //change true to false (do not optimize model, see https://github.com/openframeworks/openFrameworks/issues/4994)
     assimpModel.setScale(scale.x, scale.y, scale.z);
     assimpModel.setPosition(0, 0, 0);
@@ -162,6 +168,8 @@ void ofApp::draw() {
     glEnable(GL_NORMALIZE);
     glDisable(GL_CULL_FACE);
     ofPoint scale		= assimpModel.getScale();
+    
+    model2.drawFaces();
     
     ofSetColor(0, 0, 0);
     logoMat.begin();

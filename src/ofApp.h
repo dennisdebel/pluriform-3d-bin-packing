@@ -29,6 +29,7 @@ public:
     bool bDropBox;
     
     vector<ofxBulletCustomShape*>	logos;
+    vector<ofxBulletCustomShape*>	logos2;
     ofMaterial						logoMat;
     vector<ofxBulletBaseShape*>		shapes;
     ofMaterial						shapesMat;
@@ -41,5 +42,6 @@ public:
     ofLight						light;
     
     ofxAssimpModelLoader		assimpModel;
+    ofxAssimpModelLoader		model2;
     
 };
